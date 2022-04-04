@@ -1,0 +1,22 @@
+general:
+  verbose: true
+
+stages:
+
+steps:
+  helmExecute:
+    helmChartPath: './'
+    namespace: 'test'
+    # ?? about deploymentName
+    deploymentName: 'nginx-sap'
+    kubeContext: 'aks-getting-started'
+    kubeConfig: '/Users/Vitalii_Sidorov/.kube/config'
+    #packageVersion: '7.8.20'
+    helmDeployWaitSeconds: 1500
+    dependencyUpdate: false
+    appVersion: 26.5.4
+    filterTest: "name=test1,name=test2"
+    dumpLogs: true
+    publish: true
+    targetRepositoryName: test2
+    dependency: update
